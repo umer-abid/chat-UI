@@ -23,10 +23,10 @@
     </button>
     <div class="chat-popup" id="myForm">
       <div class="xyz">
-      <button style="float: right; margin: 1rem;" class="btn btn-primary chat-close-btn" onclick="closeForm()">
-        X
-      </button>
-    </div>
+        <button style="float: right; margin: 1rem;" class="btn btn-primary chat-close-btn" onclick="closeForm()">
+          X
+        </button>
+      </div>
     <div class="form-container">
       <!-- <div class="chat-close-btn">
             <button class="btn btn-primary" onclick="closeForm()">X</button>
@@ -39,7 +39,7 @@
               <div class="row no-gutters">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                   <div class="chat-container">
-                    <ul class="chat-box chatContainerScroll">
+                    <ul style="height: 59vh;overflow-y: auto;overflow-x: hidden;" id="chatUl" class="chat-box chatContainerScroll">
                       <li class="chat-left">
                         <div class="chat-avatar">
                           <div class="chat-name">Russell</div>
@@ -148,14 +148,18 @@
                       </li>
                     </ul>
                     <div class="form-group mt-3 mb-0">
-                      <form action="">
-                        <textarea
+                      
+                        <input
+                          type="text"
+                          onchange="handleChange(this.value)"
+                          id="messageData"
                           class="form-control"
+                          autocomplete="off"
                           rows="3"
                           placeholder="Type your message here..."
-                        ></textarea>
-                        <button class="btn btn-primary send-btn">Send</button>
-                      </form>
+                        ></input>
+                        <button type='button' class="btn btn-primary send-btn">Send</button>
+                      
                     </div>
                   </div>
                 </div>
